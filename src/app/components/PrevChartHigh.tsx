@@ -35,7 +35,7 @@ const PrevChart = ({ symbol }) => {
   const [timeRange, setTimeRange] = useState('1D');
   const [period1, setPeriod1] = useState<string>(() => {
     const today = new Date();
-    today.setDate(today.getDate() - 1); // Subtract 1 day from today
+    today.setDate(today.getDate() - 2); // Subtract 1 day from today
     const year = today.getFullYear();
     const month = (today.getMonth() + 1).toString().padStart(2, '0'); // Ensure month is two digits
     const day = today.getDate().toString().padStart(2, '0'); // Ensure day is two digits
