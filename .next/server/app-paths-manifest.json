@@ -1,0 +1,6 @@
+{
+  "/api/finance/route": "app/api/finance/route.js",
+  "/api/getStocksData/route": "app/api/getStocksData/route.js",
+  "/prev/page": "app/prev/page.js",
+  "/future/page": "app/future/page.js"
+}
