@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stock_price_prediction"
+version = "0.1.0"
+description = "This project focuses on forecasting stock prices using Long Short-Term Memory (LSTM) networks, a deep learning model well-suited for sequential data. Historical stock price data from Yahoo Finance is preprocessed, including normalization, feature engineering, and splitting into training and test sets. The LSTM model is designed to capture temporal dependencies, with hyperparameter optimization to enhance accuracy."
+readme = "README.rst"
+authors = [
+  {name = "Om Patil", email = "omp.omtech@gmail.com"}
+]
+maintainers = [
+  {name = "Om Patil", email = "omp.omtech@gmail.com"}
+]
+classifiers = [
+
+]
+license = {text = "MIT license"}
+dependencies = [
+  "typer"
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+
+bugs = "https://github.com/OP22007/stock_price_prediction/issues"
+changelog = "https://github.com/OP22007/stock_price_prediction/blob/master/changelog.md"
+homepage = "https://github.com/OP22007/stock_price_prediction"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
